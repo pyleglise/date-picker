@@ -8,15 +8,19 @@ A datepicker component built with Next.js using FontAwesome and Tailwind
 npm i nextsj-date-picker
 ```
 
+Or :
+
 ```
 yarn add nextsj-date-picker
 ```
+
+Or :
 
 ```
 pnpm add nextsj-date-picker
 ```
 
-## Example (classic)
+## Example of use
 
 ```js
 import { DatePicker } from './src/lib/components/datePicker'
@@ -72,11 +76,11 @@ export default Example
 
 ### props:
 
-`setModalDateIsOpen` This state function is mandatory and will allow the date picker modal to close itself | _**Required**_
+`setModalDateIsOpen` : This state function is mandatory and will allow the date picker modal to close itself | _**Required**_
 
-`clickedInput` The id of the input filed to attache the date picker modal to
+`clickedInput` : The id of the input filed to attache the date picker modal to
 | _**Required**_
 
-`endYear` The last year to display. Deault : current year | _**Optional**_
+`endYear` : The last year to display. Deault : current year | _**Optional**_
 
-`yearCount` The nomber of years to display. Default : 100 | _**Optional**_
+`yearCount` : The nomber of years to display. Default : 100 | _**Optional**_
