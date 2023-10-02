@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -6,8 +7,8 @@ import {
   faCaretDown,
   faCaretUp,
 } from '@fortawesome/free-solid-svg-icons'
-import formatDateUS from '../lib/dateFormat'
-import utilStyles from '../../styles/utils.module.scss'
+import formatDateUS from '../dateFormat'
+import utilStyles from './styles/utils.module.scss'
 const dateNow = new Date()
 const yearNow = dateNow.getFullYear()
 

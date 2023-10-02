@@ -1,7 +1,22 @@
 {
-  "name": "date-picker",
+  "name": "nextsj-date-picker",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "description": "Date Picker component created for Next.js projects",
+  "author": "Pierre-Yves Léglise - axialdata",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "date picker",
+    "next.js"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -19,7 +34,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "clean": "rd /s /q dist",
+    "build": "NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
