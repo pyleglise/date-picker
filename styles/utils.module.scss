@@ -1,0 +1,12 @@
+.cal-button {
+  @apply self-center p-1 text-xs rounded bg-secondary-color text-white;
+  &:hover {
+    @apply bg-white text-black shadow-btn-light-blue shadow-[0_2px_10px_5px];
+  }
+}
+.darkBG {
+  @apply bg-[rgba(0,0,0,0.2)] w-screen h-screen overflow-hidden z-0 absolute left-0 top-0;
+}
+.cal-cell {
+  @apply cursor-pointer flex items-center justify-center w-full hover:bg-bg-color-light hover:text-white rounded;
+}
