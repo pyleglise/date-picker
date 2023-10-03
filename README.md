@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Simple Date Picker component created for Next.js projects
 
-## Getting Started
+A datepicker component built with Next.js using FontAwesome
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+npm i nextsj-date-picker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or :
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+yarn add nextsj-date-picker
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Or :
 
-## Learn More
+```
+pnpm add nextsj-date-picker
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Importing the css stylesheet
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For compatibility purpose with next.js projects, the css stylesheet needs to be imported in your project.
+Import the date picker and his css as shown in the example below :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Example of use
 
-## Deploy on Vercel
+```js
+import { DatePicker } from 'date-picker-nextjs'
+import 'date-picker-nextjs/dist/components/Datepicker.css'
+import { useState } from 'react'
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+const Example = () => {
+  const [modalDateIsOpen, setModalDateIsOpen] = useState(false)
+  const [clickedInput, setClickedInput] = useState(null)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  const handleDatePicker = (e) => {
+    setClickedInput(e.target.id)
+    setModalDateIsOpen(true)
+  }
+
+  const submit = (e) => {
+    e.preventDefault()
+    // your logic
+    console.log(inputValue)
+  }
+
+  return (
+    <form
+      className='test'
+      onSubmit={submit}
+    >
+      <label htmlFor='birthdate'>Birthdate</label>
+      <input
+        className='input-field outline-none'
+        type='text'
+        id='dateOfBirth'
+        placeholder='Date of birth'
+        onClick={handleDatePicker}
+      />
+
+      <input
+        type='submit'
+        value='Submit'
+      />
+    </form>
+    {modalDateIsOpen && (
+        <DatePicker
+          setModalDateIsOpen={setModalDateIsOpen}
+          clickedInput={clickedInput}
+        />
+      )}
+  )
+}
+
+export default Example
+```
+
+#
+
+### props:
+
+`setModalDateIsOpen` : This state function is mandatory and will allow the date picker modal to close itself | _**Required**_
+
+`clickedInput` : The id of the input filed to attach the date picker modal to
+| _**Required**_
+
+`endYear` : The last year to display. Default : current year | _**Optional**_
+
+`yearCount` : The nomber of years to display. Default : 100 | _**Optional**_

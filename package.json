@@ -1,23 +1,71 @@
 {
-  "name": "date-picker",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "name": "date-picker-nextjs",
+  "version": "0.1.22",
+  "license": "BSD-3-Clause",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "description": "Date Picker component created for Next.js projects",
+  "author": "Pierre-Yves Léglise - axialdata",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AxialData/date-picker.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "date picker",
+    "next.js"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "core-js": "^3.33.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "clean": "rmdir dist /q /s",
+    "build": "rmdir dist /q /s && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest"
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
