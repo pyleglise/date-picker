@@ -1,6 +1,6 @@
 # Simple Date Picker component created for Next.js projects
 
-A datepicker component built with Next.js using FontAwesome and Tailwind
+A datepicker component built with Next.js using FontAwesome
 
 ## Installation
 
@@ -20,10 +20,13 @@ Or :
 pnpm add nextsj-date-picker
 ```
 
+import the date picker and his css as shown :
+
 ## Example of use
 
 ```js
-import { DatePicker } from './src/lib/components/datePicker'
+import { DatePicker } from 'date-picker-nextjs'
+import 'date-picker-nextjs/dist/components/Datepicker.css'
 import { useState } from 'react'
 
 const Example = () => {

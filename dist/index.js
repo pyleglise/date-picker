@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "DatePicker", {
   enumerable: true,
   get: function get() {
-    return _datePicker.default;
+    return _Datepicker.default;
   }
 });
-var _datePicker = _interopRequireDefault(require("./lib/components/datePicker"));
+var _Datepicker = _interopRequireDefault(require("./components/Datepicker"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

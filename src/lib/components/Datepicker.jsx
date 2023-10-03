@@ -8,7 +8,7 @@ import {
   faCaretUp,
 } from '@fortawesome/free-solid-svg-icons'
 import formatDateUS from '../dateFormat'
-import utilStyles from './styles/utils.module.scss'
+// import './Datepicker.css'
 const dateNow = new Date()
 const yearNow = dateNow.getFullYear()
 
@@ -59,7 +59,7 @@ export default function DatePicker({
     const firstDay = new Date(
       selectedDate.getFullYear(),
       selectedDate.getMonth(),
-      1,
+      1
     )
     return firstDay.getDay()
   }
@@ -73,24 +73,13 @@ export default function DatePicker({
           key={`year-${year}`}
           id={`year-${year}`}
           onClick={() => changeYear(year)}
-          className={
-            utilStyles['cal-cell'] +
-            (yearToday === year ? ' font-bold bg-[rgba(0,0,0,0.2)]' : '')
-          }
+          className={'cal-cell' + (yearToday === year ? ' year-selected' : '')}
         >
           {year}
-        </div>,
+        </div>
       )
     }
-    return (
-      <div
-        className={
-          'grid grid-cols-5 w-full pr-1 text-base text-center cursor-default h-[10.4em] overflow-y-auto'
-        }
-      >
-        {years.reverse()}
-      </div>
-    )
+    return <div className="year-grid">{years.reverse()}</div>
   }
   const generateMonths = () => {
     const today = new Date()
@@ -107,22 +96,20 @@ export default function DatePicker({
           id={`month-${month}`}
           onClick={() => selectMonth(month - 1)}
           className={
-            utilStyles['cal-cell'] +
+            'cal-cell' +
             (monthToday === month - 1 && yearToday === selectedYear
-              ? ' text-[.95em] font-bold bg-[rgba(0,0,0,0.2)]'
+              ? ' month-selected'
               : '')
           }
         >
           {monthString}
-        </div>,
+        </div>
       )
     }
     return (
       <div
         // ref={refYearsList}
-        className={
-          'grid grid-cols-3 w-full text-base cursor-default h-[10.4em] overflow-y-auto'
-        }
+        className="month-grid"
       >
         {months}
       </div>
@@ -134,7 +121,7 @@ export default function DatePicker({
     const lastDay = new Date(
       selectedDate.getFullYear(),
       selectedDate.getMonth() + 1,
-      0,
+      0
     )
     const today = new Date()
     const dayToday = today.getDate()
@@ -152,11 +139,11 @@ export default function DatePicker({
         <div
           key={date}
           className={
-            utilStyles['cal-cell'] +
+            'cal-cell' +
             (dayToday === date &&
             monthToday === selectedMonth &&
             yearToday === selectedYear
-              ? ' font-bold bg-[rgba(0,0,0,0.2)]'
+              ? ' day-selected'
               : '')
           }
           onClick={() =>
@@ -164,49 +151,46 @@ export default function DatePicker({
               new Date(
                 selectedDate.getFullYear(),
                 selectedDate.getMonth(),
-                date,
-              ),
+                date
+              )
             )
           }
         >
           {date}
-        </div>,
+        </div>
       )
     }
 
     return (
       <>
-        <div className='grid grid-cols-7 gap-1 text-center border-b-2 cursor-default'>
-          <div className=''>Mon</div>
-          <div className=''>Tue</div>
-          <div className=''>Wed</div>
-          <div className=''>Thu</div>
-          <div className=''>Fri</div>
-          <div className='italic '>Sat</div>
-          <div className='italic '>Sun</div>
+        <div className="days-header">
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div className="italic">Sat</div>
+          <div className="italic">Sun</div>
         </div>
-        <div className='grid grid-cols-7 gap-1 text-center mt-1'>{days}</div>
+        <div className="days-grid">{days}</div>
       </>
     )
   }
   const datePickerNavigator = () => {
     return (
-      <div className='flex justify-between mb-1'>
+      <div className="nav-container">
         <FontAwesomeIcon
-          className={utilStyles['cal-button']}
+          className="cal-button"
           icon={faArrowLeft}
           onClick={() => changeMonth(-1)}
         />
-        <div className='flex self-center font-bold gap-2'>
+        <div className="nav-buttons">
           <div>
-            <p
-              className='px-1 cursor-pointer hover:bg-bg-color-light hover:text-white hover:rounded '
-              onClick={toggleMonthScreen}
-            >
+            <p className="nav-button" onClick={toggleMonthScreen}>
               {selectedDate.toLocaleDateString('default', {
                 month: 'long',
               })}
-              <span className='ml-1'>
+              <span className="margin-left">
                 <FontAwesomeIcon
                   icon={monthSelectIsOpen ? faCaretDown : faCaretUp}
                 />
@@ -214,14 +198,11 @@ export default function DatePicker({
             </p>
           </div>
           <div>
-            <p
-              className='px-1 cursor-pointer hover:bg-bg-color-light hover:text-white hover:rounded '
-              onClick={toggleYearScreen}
-            >
+            <p className="nav-button" onClick={toggleYearScreen}>
               {selectedDate.toLocaleDateString('default', {
                 year: 'numeric',
               })}
-              <span className='ml-1'>
+              <span className="margin-left">
                 <FontAwesomeIcon
                   icon={yearSelectIsOpen ? faCaretDown : faCaretUp}
                 />
@@ -230,7 +211,7 @@ export default function DatePicker({
           </div>
         </div>
         <FontAwesomeIcon
-          className={utilStyles['cal-button']}
+          className="cal-button"
           icon={faArrowRight}
           onClick={() => changeMonth(1)}
         />
@@ -246,19 +227,18 @@ export default function DatePicker({
 
     return (
       <div
-        className={utilStyles['darkBG']}
+        className="darkBG"
         onClick={(e) => {
-          e.target.className === utilStyles['darkBG'] &&
-            setModalDateIsOpen(false)
+          e.target.className === 'darkBG' && setModalDateIsOpen(false)
         }}
       >
         <div
-          className='fixed h-auto w-auto  bg-white rounded-lg shadow-[0_5px_20px_0] really-dark'
+          className="main-container"
           style={{ top: topOffset, left: leftOffset }}
         >
-          <div className='text-left mx-3 py-2 w-[16.3em] h-[13.1em] '>
+          <div className="date-picker-container">
             {datePickerNavigator()}
-            <div className=''>
+            <div>
               {yearSelectIsOpen
                 ? generateYears()
                 : monthSelectIsOpen
