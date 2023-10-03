@@ -5,19 +5,19 @@ A datepicker component built with Next.js using FontAwesome
 ## Installation
 
 ```
-npm i nextsj-date-picker
+npm i date-picker-nextjs
 ```
 
 Or :
 
 ```
-yarn add nextsj-date-picker
+yarn add date-picker-nextjs
 ```
 
 Or :
 
 ```
-pnpm add nextsj-date-picker
+pnpm add date-picker-nextjs
 ```
 
 ## Importing the css stylesheet
