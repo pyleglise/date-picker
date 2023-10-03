@@ -61,7 +61,8 @@ export default function DatePicker({
       selectedDate.getMonth(),
       1
     )
-    return firstDay.getDay()
+    if (firstDay.getDay() === 0) return 7
+    else return firstDay.getDay()
   }
   const generateYears = () => {
     const today = new Date()

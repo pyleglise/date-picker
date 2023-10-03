@@ -1,6 +1,6 @@
 {
   "name": "date-picker-nextjs",
-  "version": "0.1.17",
+  "version": "0.1.22",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -10,6 +10,10 @@
   ],
   "description": "Date Picker component created for Next.js projects",
   "author": "Pierre-Yves Léglise - axialdata",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AxialData/date-picker.git"
+  },
   "keywords": [
     "react",
     "components",

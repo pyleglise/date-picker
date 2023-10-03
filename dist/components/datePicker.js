@@ -58,7 +58,7 @@ function DatePicker(_ref) {
   };
   const getFirstDayOfWeek = () => {
     const firstDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
-    return firstDay.getDay();
+    if (firstDay.getDay() === 0) return 7;else return firstDay.getDay();
   };
   const generateYears = () => {
     const today = new Date();

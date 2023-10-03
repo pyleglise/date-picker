@@ -20,7 +20,10 @@ Or :
 pnpm add nextsj-date-picker
 ```
 
-import the date picker and his css as shown :
+## Importing the css stylesheet
+
+For compatibility purpose with next.js projects, the css stylesheet needs to be imported in your project.
+Import the date picker and his css as shown in the example below :
 
 ## Example of use
 
@@ -81,9 +84,9 @@ export default Example
 
 `setModalDateIsOpen` : This state function is mandatory and will allow the date picker modal to close itself | _**Required**_
 
-`clickedInput` : The id of the input filed to attache the date picker modal to
+`clickedInput` : The id of the input filed to attach the date picker modal to
 | _**Required**_
 
-`endYear` : The last year to display. Deault : current year | _**Optional**_
+`endYear` : The last year to display. Default : current year | _**Optional**_
 
 `yearCount` : The nomber of years to display. Default : 100 | _**Optional**_
