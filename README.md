@@ -20,16 +20,10 @@ Or :
 pnpm add date-picker-nextjs
 ```
 
-## Importing the css stylesheet
-
-For compatibility purpose with next.js projects, the css stylesheet needs to be imported in your project.
-Import the date picker and his css as shown in the example below :
-
 ## Example of use
 
 ```js
 import { DatePicker } from 'date-picker-nextjs'
-import 'date-picker-nextjs/dist/components/Datepicker.css'
 import { useState } from 'react'
 
 const Example = () => {
@@ -90,3 +84,10 @@ export default Example
 `endYear` : The last year to display. Default : current year | _**Optional**_
 
 `yearCount` : The nomber of years to display. Default : 100 | _**Optional**_
+
+#
+
+### Additional informations:
+
+[Developpeur documentation](https://pyleglise.github.io/date-picker/)
+Author : [Pierre-Yves Léglise](https://github.com/pyleglise/)

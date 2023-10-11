@@ -1,0 +1,53 @@
+{
+  "plugins": ["plugins/markdown", "node_modules/jsdoc-babel"],
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "source": {
+    "include": ["src"],
+    "includePattern": ".js(doc|x)?$",
+    "excludePattern": "(node_modules/|docs)",
+    "exclude": ["node_modules", "docs"]
+  },
+
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+
+  "opts": {
+    "destination": "docs",
+    "search": true,
+    "recurse": true,
+    "verbose": true,
+    "readme": "README.md",
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "default_theme": "dark",
+      "title": "date-picker-nextjs developper Documentation",
+      "homepageTitle": "date-picker-nextjs documentation",
+      "footer": "date-picker-nextjs - Pierre-Yves Léglise - axialdata - 2023",
+      "static_dir": ["public/favicon.ico"],
+      "favicon": "public/favicon.ico",
+      "includeFilesListInHomepage": true,
+      "menu": [
+        {
+          "title": "Source",
+          "link": "https://github.com/pyleglise/date-picker",
+          "target": "_blank"
+        },
+        {
+          "title": "NPM Package",
+          "link": "https://www.npmjs.com/package/date-picker-nextjs",
+          "target": "_blank"
+        }
+      ]
+    },
+    "displayModuleHeader": true
+  },
+  "markdown": {
+    "hardwrap": false,
+    "idInHeadings": true
+  }
+}
