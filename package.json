@@ -32,7 +32,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "core-js": "^3.33.0",
-    "date-picker-nextjs": "^0.1.25"
+    "react-jss": "^10.10.0"
   },
   "scripts": {
     "clean": "rmdir dist /q /s",
@@ -68,7 +68,6 @@
     "jsdoc-babel": "^0.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-jss": "^10.10.0",
     "react-scripts": "^5.0.1"
   },
   "peerDependencies": {
