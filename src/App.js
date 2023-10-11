@@ -1,6 +1,7 @@
-import logo from './logo.svg'
+import { DatePicker } from 'date-picker-nextjs'
 import './App.css'
-import { DatePicker } from './lib/components/Datepicker'
+// import DatePicker from './lib/components/Datepicker'
+import { useState } from 'react'
 
 function App() {
   const [modalDateIsOpen, setModalDateIsOpen] = useState(false)
@@ -14,45 +15,22 @@ function App() {
   const submit = (e) => {
     e.preventDefault()
     // your logic
-    console.log(inputValue)
+    // console.log(inputValue)
   }
+
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img
-          src={logo}
-          className='App-logo'
-          alt='logo'
-        />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-      <form
-        className='test'
-        onSubmit={submit}
-      >
-        <label htmlFor='birthdate'>Birthdate</label>
+    <>
+      <form className="test" onSubmit={submit}>
+        <label htmlFor="birthdate">Birthdate</label>
         <input
-          className='input-field outline-none'
-          type='text'
-          id='dateOfBirth'
-          placeholder='Date of birth'
+          className="input-field outline-none"
+          type="text"
+          id="dateOfBirth"
+          placeholder="Date of birth"
           onClick={handleDatePicker}
         />
 
-        <input
-          type='submit'
-          value='Submit'
-        />
+        <input type="submit" value="Submit" />
       </form>
       {modalDateIsOpen && (
         <DatePicker
@@ -60,8 +38,7 @@ function App() {
           clickedInput={clickedInput}
         />
       )}
-      )
-    </div>
+    </>
   )
 }
 
