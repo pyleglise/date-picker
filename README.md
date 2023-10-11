@@ -89,6 +89,6 @@ export default Example
 
 ### Additional informations:
 
-[Developpeur documentation](https://pyleglise.github.io/date-picker/)
+[Developper documentation](https://pyleglise.github.io/date-picker/)
 
 Author : [Pierre-Yves Léglise](https://github.com/pyleglise/)
