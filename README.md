@@ -42,30 +42,26 @@ const Example = () => {
   }
 
   return (
-    <form
-      className='test'
-      onSubmit={submit}
-    >
-      <label htmlFor='birthdate'>Birthdate</label>
-      <input
-        className='input-field outline-none'
-        type='text'
-        id='dateOfBirth'
-        placeholder='Date of birth'
-        onClick={handleDatePicker}
-      />
+    <>
+      <form className="test" onSubmit={submit}>
+        <label htmlFor="birthdate">Birthdate</label>
+        <input
+          className="input-field outline-none"
+          type="text"
+          id="dateOfBirth"
+          placeholder="Date of birth"
+          onClick={handleDatePicker}
+        />
 
-      <input
-        type='submit'
-        value='Submit'
-      />
-    </form>
-    {modalDateIsOpen && (
+        <input type="submit" value="Submit" />
+      </form>
+      {modalDateIsOpen && (
         <DatePicker
           setModalDateIsOpen={setModalDateIsOpen}
           clickedInput={clickedInput}
         />
       )}
+    </>
   )
 }
 
