@@ -1,6 +1,5 @@
-import { DatePicker } from 'date-picker-nextjs'
 import './App.css'
-// import DatePicker from './lib/components/Datepicker'
+import DatePicker from './lib/components/Datepicker'
 import { useState } from 'react'
 
 function App() {
@@ -14,8 +13,6 @@ function App() {
 
   const submit = (e) => {
     e.preventDefault()
-    // your logic
-    // console.log(inputValue)
   }
 
   return (

@@ -27,7 +27,6 @@ const useStyles = createUseStyles({
     "align-self": "center",
     "padding": "0.25rem",
     "font-size": "0.75rem",
-    // "line-height": "1rem",
     "border-radius": "0.25rem",
     "background-color": "#3a33a4",
     "color": "white"
@@ -202,7 +201,6 @@ const Example = () => {
   const submit = (e) => {
     e.preventDefault()
     // your logic
-    console.log(inputValue)
   }
 
   return (
@@ -378,7 +376,6 @@ const DatePicker=({
     }
     return (
       <div
-        // ref={refYearsList}
         className={styles["month-grid"]}
       >
         {months}

@@ -38,7 +38,6 @@ const Example = () => {
   const submit = (e) => {
     e.preventDefault()
     // your logic
-    console.log(inputValue)
   }
 
   return (
