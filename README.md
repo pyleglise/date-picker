@@ -42,6 +42,7 @@ const Example = () => {
 
   return (
     <>
+
       <form className="test" onSubmit={submit}>
         <label htmlFor="birthdate">Birthdate</label>
         <input
@@ -60,6 +61,7 @@ const Example = () => {
           clickedInput={clickedInput}
         />
       )}
+
     </>
   )
 }
